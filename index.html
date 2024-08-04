@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My project</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header-wrapper">
+      <div class="burger-menu" id="burger-menu">☰</div>
+      <a href="#" class="welcome-link">Welcome, Roman!</a>
+      <h1 class="main-title">MyPlanner</h1>
+      <input
+        type="text"
+        class="search-input"
+        placeholder="search notes, tasks, etc."
+      />
+      <button class="search-button">Search</button>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <a href="#" class="sidebar-link">Tasks</a>
+      <a href="#" class="sidebar-link">Notes</a>
+      <a href="#" class="sidebar-link">Calendar</a>
+      <a href="#" class="sidebar-link">Documents</a>
+      <a href="#" class="sidebar-link">Categories</a>
+    </div>
+
+    <main class="main-container">
+      <div class="left-column">
+        <section class="fast-note">
+          <div class="section-header">
+            <h2 class="section-title">Fast Note</h2>
+            <button class="convert-button">Convert to Note</button>
+          </div>
+          <textarea placeholder="Write smth..."></textarea>
+        </section>
+        <section class="fast-save">
+          <div class="section-header">
+            <h2 class="section-title">Fast Save</h2>
+            <button class="convert-button">Convert to Document</button>
+          </div>
+          <textarea placeholder="Drag your file here..."></textarea>
+        </section>
+      </div>
+      <section class="calendar">
+        <h2 class="section-title">Calendar</h2>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=500&wkst=1&ctz=UTC&bgcolor=%23ffffff&src=YmFydGVuMDAwMDhAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23F4511E&color=%2333B679"
+          style="border: solid 1px #777"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <span>&copy; 2024 My Django Project</span>
+      </div>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Register</h2>
+        <form id="registration-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">E-mail address:</label>
+          <input type="email" id="email" name="email" required />
+          <label>
+            <input type="checkbox" id="confirmation" required />
+            I agree with the conditions
+          </label>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
