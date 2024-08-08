@@ -16,20 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebar.style.width = "0";
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modal");
+  const modal = document.getElementById("task-modal");
   const closeModal = document.querySelector(".close-modal");
+  const createTaskBtn = document.getElementById("create-task-btn");
 
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
+  createTaskBtn.addEventListener("click", () => {
+    modal.classList.add("show");
   });
 
-  // Закрытие на любую точку //
-  // window.addEventListener("click", (event) => {
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // });
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+
+  // Закрытие модального окна при клике вне его области
+  window.addEventListener("click", (event) => {
+    if (!modal.contains(event.target) && event.target !== createTaskBtn) {
+      modal.classList.remove("show");
+    }
+  });
 });

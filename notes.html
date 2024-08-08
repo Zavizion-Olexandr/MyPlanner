@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks - My Django Project</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-wrapper">
+      <div class="burger-menu" id="burger-menu">☰</div>
+      <a href="#" class="welcome-link">Notes</a>
+      <h1 class="main-title-second">MyPlanner</h1>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <a href="index.html" class="sidebar-link">Home</a>
+      <a href="tasks.html" class="sidebar-link">Tasks</a>
+      <a href="notes.html" class="sidebar-link">Notes</a>
+      <a href="calendar.html" class="sidebar-link">Calendar</a>
+      <a href="documents.html" class="sidebar-link">Documents</a>
+      <a href="categories.html" class="sidebar-link">Categories</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <section class="tasks">
+        <section class="note">
+          <div class="convert__note">
+            <button class="convert-button" id="create-task-btn">
+              Create Task
+            </button>
+          </div>
+        </section>
+        <!-- Modal -->
+        <div id="notes-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create a New Task</h2>
+            <form id="notes-form">
+              <label for="notes-title">Task Title</label>
+              <input type="text" id="notes-title" name="notes-title" required />
+
+              <label for="notes-desc">Task Description</label>
+              <textarea id="notes-desc" name="notes-desc" required></textarea>
+
+              <button class="tasks__btn" type="submit">Add Task</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <span>&copy; 2024 My Django Project</span>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
