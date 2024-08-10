@@ -257,6 +257,103 @@ textarea {
   flex: 2;
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding: 20px;
+  background-color: #5a806a;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.prev-month-button,
+.next-month-button {
+  background-color: #5a806a;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.prev-month-button:hover,
+.next-month-button:hover {
+  background-color: #80aac8;
+}
+
+.month-title {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.new-calendar-button {
+  position: absolute;
+  margin-bottom: 20px;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  font-size: 25px;
+}
+
+.new-calendar-button:hover,
+.new-calendar-button:active {
+  background-color: #80aac8;
+  color: #ffffff;
+}
+
+.custom-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.custom-calendar h3 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.custom-calendar table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px; /* Ограничим ширину календаря */
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.custom-calendar th,
+.custom-calendar td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  cursor: pointer; /* Указатель, чтобы было видно, что элементы кликабельны */
+  font-size: 16px;
+}
+
+.custom-calendar th {
+  background-color: #5a806a;
+  color: #ffffff;
+}
+
+.custom-calendar td:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-calendar td:active {
+  background-color: #80aac8;
+  color: #ffffff;
 }
 
 /* Модальное окно */
@@ -355,38 +452,6 @@ textarea {
 .modal.show {
   display: block;
   opacity: 1;
-}
-
-#registration-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#registration-form label {
-  margin-bottom: 5px;
-}
-
-#registration-form input[type="text"],
-#registration-form input[type="email"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#registration-form input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-#registration-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #5a806a;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 .footer-wrapper {

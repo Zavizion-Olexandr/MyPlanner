@@ -28,6 +28,7 @@
       <a href="calendar.html" class="sidebar-link">Calendar</a>
       <a href="documents.html" class="sidebar-link">Documents</a>
       <a href="categories.html" class="sidebar-link">Categories</a>
+      <a href="#" class="sidebar-link">Logout</a>
     </div>
 
     <!-- Main content -->
@@ -50,14 +51,14 @@
       </div>
       <section class="calendar">
         <h2 class="section-title">Calendar</h2>
-        <iframe
-          src="https://calendar.google.com/calendar/embed?height=500&wkst=1&ctz=UTC&bgcolor=%23ffffff&src=YmFydGVuMDAwMDhAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23F4511E&color=%2333B679"
-          style="border: solid 1px #777"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
+        <div class="custom-calendar">
+          <div class="calendar-header">
+            <button class="prev-month-button">&#9664;</button>
+            <h3 class="month-title">August 2024</h3>
+            <button class="next-month-button">&#9654;</button>
+          </div>
+          <table></table>
+        </div>
       </section>
     </main>
 
@@ -66,24 +67,6 @@
         <span>&copy; 2024 My Django Project</span>
       </div>
     </footer>
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Register</h2>
-        <form id="registration-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">E-mail address:</label>
-          <input type="email" id="email" name="email" required />
-          <label>
-            <input type="checkbox" id="confirmation" required />
-            I agree with the conditions
-          </label>
-          <button type="submit">Register</button>
-        </form>
-      </div>
-    </div>
 
     <script src="js/script.js"></script>
   </body>

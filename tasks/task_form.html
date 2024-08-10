@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Task</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="../css/task_form.css" />
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <h1 class="main-title-second">MyPlanner</h1>
+    </header>
+
+    <main class="main-container">
+      <section class="task-form">
+        <h2 class="section-title">Edit Task</h2>
+
+        <label for="task-title">Title</label>
+        <input
+          type="text"
+          id="task-title"
+          class="input-field"
+          placeholder="Enter task title"
+        />
+
+        <label for="task-description">Description</label>
+        <textarea
+          id="task-description"
+          class="input-field"
+          placeholder="Enter task description"
+        ></textarea>
+
+        <label>Status</label>
+        <div class="toggle-buttons">
+          <button class="status-button active" data-status="pending">
+            Pending
+          </button>
+          <button class="status-button" data-status="in-progress">
+            In Progress
+          </button>
+          <button class="status-button" data-status="completed">
+            Completed
+          </button>
+        </div>
+
+        <label>Priority</label>
+        <div class="toggle-buttons">
+          <button class="priority-button active" data-priority="very-low">
+            Very Low
+          </button>
+          <button class="priority-button" data-priority="low">Low</button>
+          <button class="priority-button" data-priority="medium">Medium</button>
+          <button class="priority-button" data-priority="high">High</button>
+          <button class="priority-button" data-priority="very-high">
+            Very High
+          </button>
+        </div>
+
+        <label for="task-tags">Tags</label>
+        <input
+          type="text"
+          id="task-tags"
+          class="input-field"
+          placeholder="Enter tags"
+        />
+
+        <label for="task-completed">Completed</label>
+        <input type="checkbox" id="task-completed" />
+
+        <label for="task-due-date">Due Date</label>
+        <input type="date" id="task-due-date" class="input-field" />
+        <p>Count in days, leave empty if no due date</p>
+
+        <label for="task-category">Categories</label>
+        <div>
+          <input type="checkbox" id="task-category" />
+          <label for="task-category">Home</label>
+        </div>
+
+        <button class="home-button">Home</button>
+      </section>
+    </main>
+
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <span>&copy; 2024 My Django Project</span>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
