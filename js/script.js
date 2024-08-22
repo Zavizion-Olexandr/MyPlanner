@@ -16,24 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebar.style.width = "0";
     }
   });
-
-  const modal = document.getElementById("task-modal");
-  const closeModal = document.querySelector(".close-modal");
-  const createTaskBtn = document.getElementById("create-task-btn");
-
-  createTaskBtn.addEventListener("click", () => {
-    modal.classList.add("show");
-  });
-
-  closeModal.addEventListener("click", () => {
-    modal.classList.remove("show");
-  });
-
-  window.addEventListener("click", (event) => {
-    if (!modal.contains(event.target) && event.target !== createTaskBtn) {
-      modal.classList.remove("show");
-    }
-  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {

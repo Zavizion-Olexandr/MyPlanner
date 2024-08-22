@@ -11,24 +11,28 @@ html {
   background-color: #c7ecd7;
   width: 100%;
 }
+
 *,
 *::after,
 *::before {
   box-sizing: inherit;
 }
 
-html,
 body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pacifico", sans-serif;
+  color: #151618;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: normal;
   background-image: url(../images/pexels-jplenio-2259232.jpg);
   background-size: cover;
   background-position: center;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 a {
@@ -42,35 +46,54 @@ button {
   background-color: transparent;
 }
 
-body {
-  color: #151618;
-  font-family: "Pacifico", sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: normal;
-  position: relative;
-}
-
 header {
+  width: 90%;
+  background-color: #5a806a;
+  padding: 10px 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 10px 20px;
+  margin: 20px;
 }
 
-.header-wrapper {
-  display: flex;
-  justify-content: center;
+.convert-button,
+.search-button,
+.logout-button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  font-size: 25px;
+}
+
+.search-button:hover,
+.search-button:active,
+.logout-button:hover,
+.logout-button:active,
+.convert-button:hover,
+.convert-button:active,
+.search-button:hover,
+.search-button:active,
+.create-task-button:hover,
+.create-task-button:active {
+  color: #ffffff;
+  background-color: #80aac8;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px;
   background-color: #5a806a;
-  width: calc(100% - 40px);
   padding: 10px 20px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  left: 20px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .burger-menu {
@@ -93,11 +116,19 @@ header {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.main-title-second {
+.main-title {
   flex-grow: 1;
-  text-align: right;
-  margin-right: 800px;
+  text-align: center;
   font-size: 40px;
+  margin: 0;
+}
+
+.search-input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
 }
 
 .sidebar {
@@ -145,66 +176,27 @@ header {
   cursor: pointer;
 }
 
-.main-title {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 40px;
-  margin: 0;
-}
-
 .main-container {
-  max-width: 1800px;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 50px;
-  padding: 20px;
-  height: calc(100vh - 160px);
-  margin-top: 170px;
-  margin-bottom: 140px;
   width: 100%;
-}
-
-.search-input {
-  margin-left: 20px;
-  padding: 10px;
-  border: 2px solid #000000;
-  border-radius: 8px;
-  font-size: 20px;
-  font-family: "Pacifico", sans-serif;
-}
-
-.search-button {
-  margin-left: 20px;
-  padding: 10px 20px;
-  border: 2px solid #000000;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 25px;
-}
-
-.search-button:hover,
-.search-button:active,
-.convert-button:hover,
-.convert-button:active,
-.create-task-button:hover,
-.create-task-button:active {
-  color: #ffffff;
-  background-color: #80aac8;
-  transition: background-color 0.3s, color 0.3s;
+  max-width: 1200px;
+  padding: 20px;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .left-column,
 .calendar {
-  width: 100%;
+  width: 48%;
 }
 
 .left-column {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  flex: 1;
-  width: 40%;
+  gap: 20px;
 }
 
 .section-header {
@@ -218,19 +210,9 @@ header {
   margin: 0;
 }
 
-.convert-button {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid #000000;
-  font-size: 25px;
-}
-
 .fast-note,
 .fast-save,
-.calendar,
-.note {
+.calendar {
   padding: 20px;
   background-color: #5a806a;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -246,6 +228,8 @@ header {
 
 textarea {
   flex: 1;
+  margin-top: 20px;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -253,22 +237,10 @@ textarea {
   resize: none;
 }
 
-.calendar {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 20px;
-  background-color: #5a806a;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
 .calendar-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -294,40 +266,15 @@ textarea {
   color: #ffffff;
 }
 
-.new-calendar-button {
-  position: absolute;
-  margin-bottom: 20px;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid #000000;
-  font-size: 25px;
-}
-
-.new-calendar-button:hover,
-.new-calendar-button:active {
-  background-color: #80aac8;
-  color: #ffffff;
-}
-
 .custom-calendar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-}
-
-.custom-calendar h3 {
-  font-size: 24px;
-  color: #ffffff;
 }
 
 .custom-calendar table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 500px; /* Ограничим ширину календаря */
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -338,7 +285,7 @@ textarea {
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
-  cursor: pointer; /* Указатель, чтобы было видно, что элементы кликабельны */
+  cursor: pointer;
   font-size: 16px;
 }
 
@@ -356,130 +303,19 @@ textarea {
   color: #ffffff;
 }
 
-/* Модальное окно */
-.modal {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-  margin-top: 10px;
-}
-
-.modal-content {
-  background-color: #c7ecd7;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #888;
-  max-width: 500px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: slide-down 0.5s ease;
-}
-
-@keyframes slide-down {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.close-modal {
-  color: #aaa;
-  align-self: flex-end;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#task-form,
-#notes-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#task-form,
-#notes-form label {
-  margin-bottom: 5px;
-}
-
-#task-form input[type="text"],
-#notes-form input[type="text"],
-#task-form textarea,
-#notes-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#task-form button,
-#notes-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #5a806a;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-#task-form button:hover,
-#notes-form button:hover {
-  background-color: #80aac8;
-  color: #ffffff;
-}
-
-.modal-content h2 {
-  margin-top: 0;
-}
-
-/* Анимация появления модального окна */
-.modal.show {
-  display: block;
-  opacity: 1;
-}
-
 .footer-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  width: 90%;
   background-color: #5a806a;
-  width: calc(100% - 40px);
   padding: 10px 20px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  left: 20px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
 }
 
 .footer-content span {
   font-size: 16px;
   color: #000;
-}
-
-.create-task-button {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid #000000;
-  font-size: 25px;
 }
