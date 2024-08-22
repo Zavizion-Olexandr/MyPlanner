@@ -19,18 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const calendarContainer = document.querySelector(".custom-calendar");
-  const monthTitle = document.querySelector(".month-title");
-  const prevMonthButton = document.querySelector(".prev-month-button");
-  const nextMonthButton = document.querySelector(".next-month-button");
+  const calendarContainer = document.querySelector(".calendar__custom");
+  const monthTitle = document.querySelector(".calendar__month-title");
+  const prevMonthButton = document.querySelector(".calendar__prev-button");
+  const nextMonthButton = document.querySelector(".calendar__next-button");
 
   let currentYear = new Date().getFullYear();
   let currentMonth = new Date().getMonth();
 
   function generateCalendar(year, month) {
-    calendarContainer.querySelector("table").innerHTML = ""; // Очищаем таблицу
+    const table = calendarContainer.querySelector(".calendar__table");
+    table.innerHTML = ""; // Очищаем таблицу
 
     const date = new Date(year, month);
+    const firstDayIndex = new Date(year, month, 1).getDay(); // День недели для 1-го числа месяца
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
     // Обновляем заголовок месяца
@@ -46,10 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
       th.textContent = day;
       tableHeader.appendChild(th);
     });
-    calendarContainer.querySelector("table").appendChild(tableHeader);
+    table.appendChild(tableHeader);
 
     // Заполняем таблицу днями месяца
     let currentRow = document.createElement("tr");
+
+    // Заполнение пустых ячеек перед первым днем месяца
+    for (let i = 0; i < firstDayIndex; i++) {
+      const emptyCell = document.createElement("td");
+      currentRow.appendChild(emptyCell);
+    }
+
+    // Заполнение днями месяца
     for (let i = 1; i <= daysInMonth; i++) {
       const dateCell = document.createElement("td");
       dateCell.textContent = i;
@@ -60,10 +70,16 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`You clicked on day ${i}`);
       });
 
-      if (new Date(year, month, i).getDay() === 6 || i === daysInMonth) {
-        calendarContainer.querySelector("table").appendChild(currentRow);
+      // Переход на следующую строку по окончании недели
+      if (new Date(year, month, i).getDay() === 6) {
+        table.appendChild(currentRow);
         currentRow = document.createElement("tr");
       }
+    }
+
+    // Добавляем последнюю строку, если она неполная
+    if (currentRow.children.length > 0) {
+      table.appendChild(currentRow);
     }
   }
 

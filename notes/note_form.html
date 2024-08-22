@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% if form.instance.id %}Edit Note{% else %}Create Note{% endif %}
+    </title>
+  </head>
+  <body>
+    <h1>{% if form.instance.id %}Edit Note{% else %}Create Note{% endif %}</h1>
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">
+        {% if form.instance.id %}Update{% else %}Save{% endif %}
+      </button>
+    </form>
+    <a href="{% url 'note_list' %}">Cancel</a>
+
+    <!-- Подключаем TinyMCE -->
+    <script
+      src="https://cdn.tiny.cloud/1/swoqdzvuvaeaimhl9jh8zk93nwi2u4bkklb09u8o2r6gpe4x/tinymce/5/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script>
+      tinymce.init({
+        selector: "textarea", // Подключаем TinyMCE к текстовому полю
+        plugins: "lists link image preview",
+        toolbar:
+          "undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image",
+      });
+    </script>
+  </body>
+</html>

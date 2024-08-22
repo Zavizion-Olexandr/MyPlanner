@@ -8,67 +8,72 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <header class="header-wrapper">
-      <div class="burger-menu" id="burger-menu">☰</div>
-      <a href="#" class="welcome-link">Welcome, Roman!</a>
-      <h1 class="main-title">MyPlanner</h1>
-      <button class="logout-button">Logout</button>
+  <body class="page">
+    <header class="header">
+      <div class="header__burger-menu" id="burger-menu">☰</div>
+      <a href="#" class="header__welcome-link">Welcome, Roman!</a>
+      <h1 class="header__title">MyPlanner</h1>
+      <button class="header__logout-button">Logout</button>
     </header>
 
-    <div class="search-container">
+    <div class="search">
       <input
         type="text"
-        class="search-input"
+        class="search__input"
         placeholder="search notes, tasks, etc."
       />
-      <button class="search-button">Search</button>
+      <button class="search__button">Search</button>
     </div>
 
     <div class="sidebar" id="sidebar">
-      <button class="close-btn" id="close-btn">&times;</button>
-      <a href="tasks/task_form.html" class="sidebar-link">Tasks</a>
-      <a href="notes.html" class="sidebar-link">Notes</a>
-      <a href="calendar.html" class="sidebar-link">Calendar</a>
-      <a href="documents.html" class="sidebar-link">Documents</a>
-      <a href="categories.html" class="sidebar-link">Categories</a>
-      <a href="#" class="sidebar-link">Logout</a>
+      <button class="sidebar__close-button" id="close-btn">&times;</button>
+      <a href="tasks/task_form.html" class="sidebar__link">Tasks</a>
+      <a href="notes.html" class="sidebar__link">Notes</a>
+      <a href="calendar.html" class="sidebar__link">Calendar</a>
+      <a href="documents.html" class="sidebar__link">Documents</a>
+      <a href="categories.html" class="sidebar__link">Categories</a>
+      <a href="#" class="sidebar__link">Logout</a>
     </div>
 
-    <!-- Main content -->
-    <main class="main-container">
-      <div class="left-column">
-        <section class="fast-note">
-          <div class="section-header">
-            <h2 class="section-title">Fast Note</h2>
-            <button class="convert-button">Save</button>
+    <main class="main">
+      <div class="main__column main__column--left">
+        <section class="note">
+          <div class="note__header">
+            <h2 class="note__title">Fast Note</h2>
+            <button class="note__save-button">Save</button>
           </div>
-          <textarea placeholder="Write smth..."></textarea>
+          <textarea
+            class="note__textarea"
+            placeholder="Write smth..."
+          ></textarea>
         </section>
-        <section class="fast-save">
-          <div class="section-header">
-            <h2 class="section-title">Fast Save</h2>
-            <button class="convert-button">Save</button>
+        <section class="save">
+          <div class="save__header">
+            <h2 class="save__title">Fast Save</h2>
+            <button class="save__button">Save</button>
           </div>
-          <textarea placeholder="Drag your file here..."></textarea>
+          <textarea
+            class="save__textarea"
+            placeholder="Drag your file here..."
+          ></textarea>
         </section>
       </div>
       <section class="calendar">
-        <h2 class="section-title">Calendar</h2>
-        <div class="custom-calendar">
-          <div class="calendar-header">
-            <button class="prev-month-button">&#9664;</button>
-            <h3 class="month-title">August 2024</h3>
-            <button class="next-month-button">&#9654;</button>
+        <h2 class="calendar__title">Calendar</h2>
+        <div class="calendar__custom">
+          <div class="calendar__header">
+            <button class="calendar__prev-button">&#9664;</button>
+            <h3 class="calendar__month-title">August 2024</h3>
+            <button class="calendar__next-button">&#9654;</button>
           </div>
-          <table></table>
+          <table class="calendar__table"></table>
         </div>
       </section>
     </main>
 
-    <footer class="footer-wrapper">
-      <div class="footer-content">
-        <span>&copy; 2024 My Django Project</span>
+    <footer class="footer">
+      <div class="footer__content">
+        <span class="footer__text">&copy; 2024 My Django Project</span>
       </div>
     </footer>
 
