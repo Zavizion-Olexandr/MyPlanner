@@ -1,0 +1,153 @@
+@import "globals", "header", "fonts", "calendar", "footer", "./home/home",
+  "./register/register";
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search {
+  width: 100%;
+  max-width: 600px;
+  background-color: #5a806a;
+  padding: 10px 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+}
+
+.search__input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.search__button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  background-color: #5a806a;
+  font-size: 25px;
+}
+
+.search__button:hover,
+.search__button:active {
+  color: #ffffff;
+  background-color: #80aac8;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.sidebar__link {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar__link:hover {
+  color: #f1f1f1;
+}
+
+.sidebar__close-button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  margin-bottom: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sidebar__close-button:hover {
+  color: #818181;
+}
+
+.main__column--left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 48%;
+}
+
+.note,
+.save {
+  padding: 20px;
+  background-color: #5a806a;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.note__header,
+.save__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note__title,
+.save__title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.note__textarea,
+.save__textarea {
+  flex: 1;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.note__save-button,
+.save__button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  font-size: 25px;
+}
+
+.note__save-button:hover,
+.save__button:hover,
+.note__save-button:active,
+.save__button:active {
+  color: #ffffff;
+  background-color: #80aac8;
+  transition: background-color 0.3s, color 0.3s;
+}

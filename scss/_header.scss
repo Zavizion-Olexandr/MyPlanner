@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #5a806a;
+  padding: 10px 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 0 20px;
+}
+
+// .header__burger-menu {
+//   font-size: 30px;
+//   cursor: pointer;
+//   z-index: 2;
+// }
+
+.header__welcome-link {
+  margin-left: 30px;
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.header__title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+}
+
+.header__logout-button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #5a806a;
+  cursor: pointer;
+  border: 2px solid #000000;
+  font-size: 25px;
+}
+
+.header__logout-button:hover,
+.header__logout-button:active {
+  color: #ffffff;
+  background-color: #80aac8;
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #5a806a;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__link {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: #ffffff; /* Изменение цвета при наведении */
+}
+
+.footer__copyright {
+  font-size: 18px;
+  margin-left: auto;
+}
