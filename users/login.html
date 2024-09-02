@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="login">
+      <h2 class="login__title">Login</h2>
+      <div class="login__social">
+        <a href="#" class="login__social-link">
+          <img
+            src="./../images/login/google.png"
+            alt="Login with Google"
+            class="login__social-img"
+          />
+        </a>
+        <a href="#" class="login__social-link">
+          <img
+            src="./../images/login/facebook.png"
+            alt="Login with Facebook"
+            class="login__social-img"
+          />
+        </a>
+      </div>
+      <form class="login__form">
+        <div class="login__form-group">
+          <label for="username" class="login__label">Username</label>
+          <input type="text" id="username" class="login__input" required />
+        </div>
+        <div class="login__form-group">
+          <label for="password" class="login__label">Password</label>
+          <input type="password" id="password" class="login__input" required />
+        </div>
+        <p class="login__forgot-password">
+          <a href="#" class="login__link">Forgot password?</a>
+        </p>
+        <button type="submit" class="login__button">Login</button>
+        <button type="button" class="login__signup-button">Sign Up</button>
+      </form>
+    </div>
+  </body>
+</html>
