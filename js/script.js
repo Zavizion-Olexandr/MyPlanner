@@ -27,6 +27,24 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentYear = new Date().getFullYear();
   let currentMonth = new Date().getMonth();
 
+  function updateMonthTitle(year, month) {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    monthTitle.textContent = `${monthNames[month]} ${year}`;
+  }
+
   function generateCalendar(year, month) {
     const table = calendarContainer.querySelector(".calendar__table tbody");
     table.innerHTML = ""; // Очищаем таблицу
@@ -70,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentRow.children.length > 0) {
       table.appendChild(currentRow);
     }
+
+    updateMonthTitle(year, month); // Обновляем заголовок месяца
   }
 
   // Обработка кликов на кнопки переключения месяцев
@@ -93,4 +113,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Генерация календаря на текущий месяц при загрузке страницы
   generateCalendar(currentYear, currentMonth);
+});
+// Получаем все элементы option
+const options = document.querySelectorAll(".dropdown__option");
+
+// Проходим по каждому элементу option и добавляем обработчик события
+options.forEach((option) => {
+  option.addEventListener("mouseenter", () => {
+    option.classList.add("dropdown__option-focused");
+  });
+
+  option.addEventListener("mouseleave", () => {
+    option.classList.remove("dropdown__option-focused");
+  });
 });

@@ -38,6 +38,10 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: "Pacifico", sans-serif;
+}
+
 .header {
   display: flex;
   position: sticky;
@@ -62,7 +66,7 @@ a {
   flex-grow: 1;
   text-align: center;
   font-size: 40px;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .header__logout-button {
@@ -554,16 +558,6 @@ a {
   color: #ffffff;
 }
 
-.wrapper {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .search {
   width: 100%;
   max-width: 600px;
@@ -594,11 +588,136 @@ a {
   font-size: 25px;
 }
 
-.search__button:hover,
-.search__button:active {
+.search__button:hover {
   color: #ffffff;
   background-color: #80aac8;
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили блока фильтров */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter__button {
+  padding: 10px 20px;
+  background-color: #5a806a;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter__button:hover {
+  background-color: #80aac8;
+}
+
+.filter__button--active {
+  background-color: #5a806a;
+  color: #fff;
+}
+
+/* Стили для заголовка */
+.filter-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Стили блока выбора фильтров */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.dropdown__button {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5a806a;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown__select {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  background-color: #5a806a;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+.dropdown__select:hover {
+  background-color: #80aac8;
+}
+
+.dropdown__option {
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Эмулируем наведение курсора на option с помощью классов */
+.dropdown__option:hover,
+.dropdown__option-focused {
+  background-color: #80aac8;
+  color: #fff;
+}
+
+/* Стили для состояния при фокусе */
+.dropdown__select:focus {
+  border-color: #80aac8;
+  outline: none;
+}
+
+/* Стили для самого скроллбара */
+.dropdown__select::-webkit-scrollbar {
+  width: 15px; /* Ширина скроллбара */
+}
+
+/* Стили для дорожки (фона) скроллбара */
+.dropdown__select::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Цвет фона дорожки */
+  border-radius: 10px; /* Закругленные углы */
+}
+
+/* Стили для ползунка */
+.dropdown__select::-webkit-scrollbar-thumb {
+  background-color: #5a806a; /* Цвет ползунка */
+  border-radius: 20px; /* Закругленные углы */
+  border: 2px solid #ffffff; /* Добавляем белую обводку вокруг ползунка */
+}
+
+/* Стили для ползунка при наведении */
+.dropdown__select::-webkit-scrollbar-thumb:hover {
+  background-color: #80aac8; /* Цвет ползунка при наведении */
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .sidebar {

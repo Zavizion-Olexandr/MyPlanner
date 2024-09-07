@@ -38,6 +38,40 @@
       <a href="#" class="sidebar__link">Logout</a>
     </div> -->
       <!--  -->
+
+      <div class="filter">
+        <button class="filter__button filter__button--active">All</button>
+        <button class="filter__button">Photos</button>
+        <button class="filter__button">Audio</button>
+        <button class="filter__button">Text</button>
+        <button class="filter__button">Video</button>
+        <button class="filter__button">Other</button>
+      </div>
+
+      <!-- Элемент для выбора фильтров -->
+
+      <p class="filter-label">Filter by tags:</p>
+
+      <div class="dropdown">
+        <select
+          class="dropdown__select"
+          name="filter[]"
+          multiple="multiple"
+          size="8"
+        >
+          <option value="1" class="dropdown__option">Studies</option>
+          <option value="2" class="dropdown__option">Job</option>
+          <option value="3" class="dropdown__option">Sport</option>
+          <option value="4" class="dropdown__option">Personal</option>
+          <option value="5" class="dropdown__option">Family</option>
+          <option value="6" class="dropdown__option">Trips</option>
+          <option value="7" class="dropdown__option">Purchases</option>
+          <option value="8" class="dropdown__option">Holidays</option>
+        </select>
+
+        <button class="dropdown__button">Apply Filters</button>
+      </div>
+
       <main class="main">
         <div class="main__column main__column--left">
           <section class="note">

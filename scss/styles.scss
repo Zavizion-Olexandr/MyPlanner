@@ -1,5 +1,5 @@
 @import "globals", "header", "fonts", "calendar", "footer", "./home/home",
-  "./register/register", "./login/login";
+  "./register/register", "./login/login", "./dashboard/dashboard";
 
 .wrapper {
   width: 100%;
@@ -9,43 +9,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.search {
-  width: 100%;
-  max-width: 600px;
-  background-color: #5a806a;
-  padding: 10px 20px;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 25px;
-}
-
-.search__input {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 250px;
-}
-
-.search__button {
-  padding: 5px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid #000000;
-  background-color: #5a806a;
-  font-size: 25px;
-}
-
-.search__button:hover,
-.search__button:active {
-  color: #ffffff;
-  background-color: #80aac8;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .sidebar {
