@@ -1,5 +1,6 @@
 @import "globals", "header", "fonts", "calendar", "footer", "./home/home",
-  "./register/register", "./login/login", "./dashboard/dashboard";
+  "./register/register", "./login/login", "./dashboard/dashboard",
+  "./notes_scss/note_list";
 
 .wrapper {
   width: 100%;
@@ -59,58 +60,4 @@
   flex-direction: column;
   gap: 20px;
   width: 48%;
-}
-
-.note,
-.save {
-  padding: 20px;
-  background-color: #5a806a;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.note__header,
-.save__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.note__title,
-.save__title {
-  font-size: 30px;
-  margin: 0;
-}
-
-.note__textarea,
-.save__textarea {
-  flex: 1;
-  margin-top: 20px;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-
-.note__save-button,
-.save__button {
-  padding: 5px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid #000000;
-  font-size: 25px;
-}
-
-.note__save-button:hover,
-.save__button:hover,
-.note__save-button:active,
-.save__button:active {
-  color: #ffffff;
-  background-color: #80aac8;
-  transition: background-color 0.3s, color 0.3s;
 }

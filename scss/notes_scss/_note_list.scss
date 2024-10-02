@@ -1,0 +1,215 @@
+.app-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Pacifico", sans-serif;
+  color: #151618;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-page__header {
+  width: 90%;
+  background-color: #5a806a;
+  padding: 10px 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.notes-header__title {
+  font-size: 30px;
+}
+
+.notes-header__create-link {
+  font-size: 25px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #5a806a;
+  padding: 10px 15px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.notes-header__create-link:hover {
+  background-color: #80aac8;
+  color: #ffffff;
+}
+
+.app-page__main {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes-filter {
+  width: 100%;
+  max-width: 600px;
+  background-color: #5a806a;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.notes-filter__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notes-filter__label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.notes-filter__select {
+  padding: 10px 15px;
+  border-radius: 12px; /* Закругленные углы */
+  border: 2px solid #5a806a; /* Цвет рамки */
+  background-image: linear-gradient(
+    135deg,
+    #f9f9f9,
+    #e8e9eb
+  ); /* Легкий градиент фона */
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.notes-filter__select:hover {
+  background-image: linear-gradient(135deg, #f3f4f6, #e3e5e8);
+}
+
+.notes-filter__apply-button {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #5a806a;
+  color: black;
+  cursor: pointer;
+}
+
+.notes-filter__apply-button:hover {
+  background-color: #80aac8;
+}
+
+.notes-list {
+  width: 100%;
+  max-width: 800px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notes-list__item {
+  background: linear-gradient(135deg, #f3f4f6, #e8e9eb);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #ddd;
+}
+
+.notes-list__item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.notes-list__title {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.notes-list__preview {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.notes-list__date {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.notes-list__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.notes-list__action {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #5a806a;
+  color: black;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notes-list__action:hover {
+  background-color: #80aac8;
+}
+
+.notes-main__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  background-color: #5a806a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.notes-main__back-link {
+  font-size: 16px;
+  color: #0066cc;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.notes-main__back-link:hover {
+  text-decoration: underline;
+}
+
+.app-page__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #5a806a;
+  color: white;
+  border-radius: 8px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.notes-footer__content {
+  text-align: center;
+}
+
+.notes-footer__text {
+  font-size: 14px;
+}
