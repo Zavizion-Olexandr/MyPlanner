@@ -127,3 +127,71 @@ options.forEach((option) => {
     option.classList.remove("dropdown__option-focused");
   });
 });
+
+// Отримуємо елементи
+const modal = document.getElementById("filterModal");
+const openModalBtn = document.getElementById("openModal");
+const closeModalBtn = document.getElementsByClassName("close")[0];
+
+// Коли натискаємо на кнопку, відкрити модальне вікно
+openModalBtn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// Коли натискаємо на <span> (x), закрити модальне вікно
+closeModalBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Коли користувач натискає будь-де поза модальним вікном, закрити його
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Модальне вікно кнопки delete notes-list__item
+
+// Отримуємо всі кнопки "Delete"
+const deleteButtons = document.querySelectorAll(
+  '.notes-list__action[href="#"]'
+);
+
+// Модальне вікно і кнопки
+const deleteModal = document.getElementById("deleteModal");
+const confirmDeleteButton = document.getElementById("confirmDelete");
+const cancelDeleteButton = document.getElementById("cancelDelete");
+
+// Змінна для збереження поточної нотатки, яку хочемо видалити
+let noteToDelete = null;
+
+// Додаємо події на всі кнопки "Delete"
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", function (event) {
+    event.preventDefault(); // Щоб уникнути переходу за посиланням
+    noteToDelete = this.closest(".notes-list__item"); // Зберігаємо нотатку
+    deleteModal.style.display = "flex"; // Показуємо модальне вікно
+  });
+});
+
+// Обробка кнопки "Yes"
+confirmDeleteButton.addEventListener("click", function () {
+  if (noteToDelete) {
+    noteToDelete.remove(); // Видаляємо нотатку
+    noteToDelete = null; // Скидаємо
+    deleteModal.style.display = "none"; // Ховаємо модальне вікно
+  }
+});
+
+// Обробка кнопки "No"
+cancelDeleteButton.addEventListener("click", function () {
+  noteToDelete = null; // Скидаємо нотатку
+  deleteModal.style.display = "none"; // Ховаємо модальне вікно
+});
+
+// Закриття модального вікна при кліку поза ним
+window.addEventListener("click", function (event) {
+  if (event.target == deleteModal) {
+    deleteModal.style.display = "none";
+  }
+});

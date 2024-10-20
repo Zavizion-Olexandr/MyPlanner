@@ -53,12 +53,10 @@ button {
   padding: 10px 20px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  margin: 0 20px;
+  z-index: 1000;
 }
 
 .header__welcome-link {
-  margin-left: 30px;
-  text-decoration: underline;
   font-size: 30px;
 }
 
@@ -66,7 +64,8 @@ button {
   flex-grow: 1;
   text-align: center;
   font-size: 40px;
-  margin: 0 auto;
+  margin: 0;
+  margin-right: 150px;
 }
 
 .header__logout-button {
@@ -632,7 +631,6 @@ button {
 
 /* Стили блока выбора фильтров */
 .dropdown {
-  position: relative;
   display: inline-block;
   width: 250px;
   margin-bottom: 10px;
@@ -786,18 +784,6 @@ button {
   min-height: 100vh;
 }
 
-.app-page__header {
-  width: 90%;
-  background-color: #5a806a;
-  padding: 10px 20px;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px;
-}
-
 .notes-header__title {
   font-size: 30px;
 }
@@ -816,6 +802,7 @@ button {
 .notes-header__create-link:hover {
   background-color: #80aac8;
   color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .app-page__main {
@@ -828,6 +815,8 @@ button {
 }
 
 .notes-filter {
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 600px;
   background-color: #5a806a;
@@ -837,35 +826,57 @@ button {
   margin-bottom: 20px;
 }
 
-.notes-filter__form {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Стилі для модального вікна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.notes-filter__label {
-  font-size: 20px;
+.modal-content {
+  background: linear-gradient(135deg, #f3f4f6, #e8e9eb);
+  margin: 15% auto;
+  padding: 20px;
+  border: none;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.modal-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.close {
+  color: #999;
+  float: right;
+  font-size: 28px;
   font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.notes-filter__select {
-  padding: 10px 15px;
-  border-radius: 12px; /* Закругленные углы */
-  border: 2px solid #5a806a; /* Цвет рамки */
-  background-image: linear-gradient(135deg, #f9f9f9, #e8e9eb); /* Легкий градиент фона */
-  font-size: 16px;
-  color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.notes-filter__select:hover {
-  background-image: linear-gradient(135deg, #f3f4f6, #e3e5e8);
-}
-
-.notes-filter__apply-button {
+.notes-filter__button {
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 25px;
   border-radius: 8px;
   border: 2px solid #000000;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -874,19 +885,67 @@ button {
   cursor: pointer;
 }
 
-.notes-filter__apply-button:hover {
+.notes-filter__button:hover {
+  color: #ffffff;
   background-color: #80aac8;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.notes-list {
-  width: 100%;
-  max-width: 800px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.notes-filter__form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px; /* Простір між елементами форми */
+  align-items: center;
+}
+
+.notes-filter__label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.notes-filter__select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 2px solid #5a806a;
+  background: linear-gradient(135deg, #f9f9f9, #e8e9eb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.notes-filter__select::-webkit-scrollbar {
+  display: none; /* Для WebKit-браузерів (Chrome, Safari) */
+}
+
+.notes-filter__select:hover {
+  background: linear-gradient(135deg, #f3f4f6, #e3e5e8); /* Темніший фон при наведенні */
+}
+
+.notes-filter__select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(90, 128, 106, 0.5); /* Сяйво при фокусі */
+}
+
+.notes-filter__apply-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #5a806a;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.notes-filter__apply-button:hover {
+  color: #ffffff;
+  background-color: #80aac8;
 }
 
 .notes-list__item {
@@ -944,6 +1003,7 @@ button {
 }
 
 .notes-main__list {
+  list-style-type: none; /* Прибирає маркери */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -957,14 +1017,34 @@ button {
 }
 
 .notes-main__back-link {
-  font-size: 16px;
-  color: #0066cc;
+  font-size: 20px;
+  font-weight: 650;
+  color: black;
   text-decoration: none;
   margin-top: 20px;
 }
 
 .notes-main__back-link:hover {
   text-decoration: underline;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #5a806a;
+  background-color: #5a806a;
+  color: black;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: #80aac8;
 }
 
 .app-page__footer {
