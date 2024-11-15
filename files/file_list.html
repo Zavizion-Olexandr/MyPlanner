@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Project File-list</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <a href="#" class="header__welcome-link">Your Files</a>
+        <h1 class="header__title">MyPlanner</h1>
+        <button class="header__logout-button">Logout</button>
+      </header>
+      <div class="container">
+        <div class="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="search notes, tasks, etc."
+          />
+          <button class="search__button">Search</button>
+        </div>
+
+        <div class="filter">
+          <button class="filter__button filter__button--active">All</button>
+          <button class="filter__button">Photos</button>
+          <button class="filter__button">Audio</button>
+          <button class="filter__button">Text</button>
+          <button class="filter__button">Video</button>
+          <button class="filter__button">Other</button>
+        </div>
+
+        <!-- Элемент для выбора фильтров -->
+
+        <button class="filter-button" id="openModal">Filter by tags:</button>
+
+        <div class="modal" id="modal">
+          <div class="modal__content">
+            <span class="modal__close" id="closeModal">&times;</span>
+            <h2 class="filter">Filter by tags</h2>
+            <div class="dropdown">
+              <select
+                class="dropdown__select"
+                name="filter[]"
+                multiple="multiple"
+                size="8"
+              >
+                <option value="1" class="dropdown__option">Studies</option>
+                <option value="2" class="dropdown__option">Job</option>
+                <option value="3" class="dropdown__option">Sport</option>
+                <option value="4" class="dropdown__option">Personal</option>
+                <option value="5" class="dropdown__option">Family</option>
+                <option value="6" class="dropdown__option">Trips</option>
+                <option value="7" class="dropdown__option">Purchases</option>
+                <option value="8" class="dropdown__option">Holidays</option>
+              </select>
+              <button class="dropdown__button">Apply Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="/upload_file">Upload another file</a>
+        <a href="/dashboard_logout.html">Back to Dashboard</a>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <span class="footer__text">&copy; 2024 My Django Project</span>
+        </div>
+      </footer>
+
+      <script src="/js/script_file_list.js"></script>
+    </div>
+  </body>
+</html>

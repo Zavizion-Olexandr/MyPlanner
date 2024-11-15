@@ -218,7 +218,9 @@
   gap: 15px;
 }
 
-.notes-list__action {
+.notes-list__edit,
+.notes-list__delete,
+.notes-list__archive {
   padding: 8px 12px;
   border-radius: 8px;
   background-color: #5a806a;
@@ -228,7 +230,9 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.notes-list__action:hover {
+.notes-list__edit:hover,
+.notes-list__delete:hover,
+.notes-list__archive:hover {
   background-color: #80aac8;
 }
 

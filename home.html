@@ -11,12 +11,27 @@
   <body class="page">
     <div class="wrapper">
       <header class="header__home">
-        <a href="#" class="header__welcome-link">Welcome, Roman!</a>
-        <h1 class="header__title">MyPlanner</h1>
+        <a href="#" id="greeting" class="header__welcome-link greeting hidden"
+          >Welcome, Roman!</a
+        >
+        <h1 class="header__title-home">MyPlanner</h1>
 
         <div class="header__buttons">
-          <button class="header__login-button">Login</button>
-          <button class="header__register-button">Register</button>
+          <a id="logoutBtn" class="header__login-button hidden">Logout</a>
+          <a
+            id="loginLink"
+            href="/users/login.html"
+            class="header__login-button"
+          >
+            Login
+          </a>
+          <a
+            id="registerLink"
+            href="./users/register.html"
+            class="header__register-button"
+          >
+            Register
+          </a>
         </div>
       </header>
 
@@ -228,7 +243,8 @@
         </div>
       </footer>
 
-      <script src="js/script.js"></script>
+      <script src="./js/script.js"></script>
+      <script src="./js/scriptcameincameout.js"></script>
     </div>
   </body>
 </html>

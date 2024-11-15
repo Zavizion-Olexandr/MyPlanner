@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="file"], input[type="text"], select {
+            margin-top: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .tag-section {
+            margin-top: 20px;
+        }
+
+        .tag-section label {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .tag-section select {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Files</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Поле для выбора нескольких файлов напрямую -->
+        <label for="files">Select Files:</label>
+        <input type="file" name="files" id="files" multiple>
+
+        {{ form.description.label_tag }} {{ form.description }}
+
+        <div class="tag-section">
+            <label for="tags">Select Tags:</label>
+            {{ form.tags }}
+        </div>
+
+        <button type="submit">Upload</button>
+    </form>
+    <a href="{% url 'file_list' %}">View your files</a>
+</body>
+</html>

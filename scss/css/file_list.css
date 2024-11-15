@@ -1,0 +1,185 @@
+body {
+  box-sizing: border-box;
+  background-image: url(../images/pexels-jplenio-2259232.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  font-family: "Pacifico", sans-serif;
+  color: #151618;
+  background-color: #c7ecd7;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.app-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Pacifico", sans-serif;
+  color: #151618;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 50px;
+  color: #5a806a;
+}
+
+.search-container,
+.category-buttons,
+.filter-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container label,
+.filter-container label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+.search-container input[type=text],
+.filter-container select {
+  padding: 12px 15px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 2px solid #5a806a;
+  background: linear-gradient(135deg, #f9f9f9, #e8e9eb);
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.search-container button,
+.filter-container button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #5a806a;
+  background-color: #5a806a;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-container button:hover,
+.filter-container button:hover {
+  background-color: #80aac8;
+  color: #ffffff;
+}
+
+.category-buttons a {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #5a806a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-buttons a:hover {
+  background-color: #80aac8;
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.file-card {
+  background: linear-gradient(135deg, #f3f4f6, #e8e9eb);
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.file-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.file-card a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.file-card a:hover {
+  color: #004a99;
+}
+
+.file-card .file-description {
+  font-style: italic;
+  color: #777;
+}
+
+.file-card .file-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.file-card .delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-card .delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.nav-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nav-buttons a {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #5a806a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background-color: #80aac8;
+}/*# sourceMappingURL=file_list.css.map */

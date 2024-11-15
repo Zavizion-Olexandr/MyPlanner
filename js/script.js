@@ -154,7 +154,7 @@ window.onclick = function (event) {
 
 // Отримуємо всі кнопки "Delete"
 const deleteButtons = document.querySelectorAll(
-  '.notes-list__action[href="#"]'
+  '.notes-list__delete[href="#"]'
 );
 
 // Модальне вікно і кнопки

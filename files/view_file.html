@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View and Edit File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+        }
+
+        .file-info {
+            margin-bottom: 20px;
+        }
+
+        .file-info p {
+            margin: 5px 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .file-preview {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .file-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .file-preview audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .file-preview pre {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nav-buttons a {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>View and Edit File</h1>
+
+    <div class="file-info">
+        <h2>{{ file_instance.file.name }}</h2>
+        <p><strong>Type:</strong> {{ file_instance.category }}</p>
+        <p><strong>Size:</strong> {{ file_instance.file.size|filesizeformat }}</p>
+        <p><strong>Uploaded on:</strong> {{ file_instance.uploaded_at }}</p>
+    </div>
+
+    <!-- Предварительный просмотр файла -->
+    <div class="file-preview">
+        {% if file_type == 'photo' %}
+            <img src="{{ file_instance.file.url }}" alt="{{ file_instance.file.name }}">
+        {% elif file_type == 'audio' %}
+            <audio controls>
+                <source src="{{ file_instance.file.url }}" type="audio/{{ file_instance.file.name|slice:"-3" }}">
+                Your browser does not support the audio element.
+            </audio>
+        {% elif file_type == 'txt' %}
+            <pre>{{ file_content|safe }}</pre>
+        {% else %}
+            <p>Preview not available for this file type.</p>
+        {% endif %}
+    </div>
+
+    <!-- Форма редактирования -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.description.label_tag }} {{ form.description }}
+
+        <!-- Tag Selection Section -->
+        <div class="tag-section">
+            <label for="tags">Select Tags:</label>
+            {{ form.tags }}
+        </div>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <div class="nav-buttons">
+        <a href="{% url 'file_list' %}">Back to Files</a>
+        <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

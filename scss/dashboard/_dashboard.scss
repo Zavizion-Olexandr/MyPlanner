@@ -10,6 +10,14 @@
   justify-content: center;
   margin: 25px;
 }
+
+.header__title-dashboard {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+  margin-right: 150px;
+}
 .search__input {
   padding: 10px;
   margin-right: 10px;
@@ -34,7 +42,6 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Стили блока фильтров */
 .filter {
   display: flex;
   justify-content: center;
@@ -61,14 +68,12 @@
   color: #fff;
 }
 
-/* Стили для заголовка */
 .filter-label {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* Стили блока выбора фильтров */
 .dropdown {
   display: inline-block;
   width: 250px;
@@ -116,38 +121,32 @@
   color: #000;
 }
 
-/* Эмулируем наведение курсора на option с помощью классов */
 .dropdown__option:hover,
 .dropdown__option-focused {
   background-color: #80aac8;
   color: #fff;
 }
 
-/* Стили для состояния при фокусе */
 .dropdown__select:focus {
   border-color: #80aac8;
   outline: none;
 }
 
-/* Стили для самого скроллбара */
 .dropdown__select::-webkit-scrollbar {
-  width: 15px; /* Ширина скроллбара */
+  width: 15px;
 }
 
-/* Стили для дорожки (фона) скроллбара */
 .dropdown__select::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Цвет фона дорожки */
-  border-radius: 10px; /* Закругленные углы */
+  background-color: #f1f1f1;
+  border-radius: 10px;
 }
 
-/* Стили для ползунка */
 .dropdown__select::-webkit-scrollbar-thumb {
-  background-color: #5a806a; /* Цвет ползунка */
-  border-radius: 20px; /* Закругленные углы */
-  border: 2px solid #ffffff; /* Добавляем белую обводку вокруг ползунка */
+  background-color: #5a806a;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
 }
 
-/* Стили для ползунка при наведении */
 .dropdown__select::-webkit-scrollbar-thumb:hover {
   background-color: #80aac8; /* Цвет ползунка при наведении */
 }

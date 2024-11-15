@@ -1,7 +1,7 @@
 .header {
   display: flex;
   position: sticky;
-  top: 0;
+  top: 0px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -22,22 +22,14 @@
   font-size: 30px;
 }
 
-.header__title {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 40px;
-  margin: 0;
-  margin-right: 150px;
-}
-
 .header__logout-button {
   padding: 5px 10px;
   border-radius: 8px;
-  background-color: #5a806a;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   border: 2px solid #000000;
   font-size: 25px;
+  background-color: transparent;
 }
 
 .header__logout-button:hover,

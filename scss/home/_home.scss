@@ -1,7 +1,6 @@
 .header__home {
   display: flex;
   position: sticky;
-
   top: 0px;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +9,14 @@
   padding: 10px 20px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  z-index: 10;
+  z-index: 1000;
+}
+
+.header__title-home {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
 }
 
 .header__buttons {
@@ -20,8 +26,9 @@
 
 .header__login-button,
 .header__register-button {
-  padding: 5px 10px;
+  padding: 13px;
   border-radius: 8px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   border: 2px solid #000000;
   font-size: 25px;
@@ -158,4 +165,8 @@
   background-color: #80aac8;
   color: #ffffff;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.hidden {
+  display: none;
 }

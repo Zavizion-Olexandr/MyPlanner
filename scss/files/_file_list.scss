@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header__title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+  margin-right: 150px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Простір між кнопками */
+  margin-top: 20px;
+}
+
+.nav-buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5a806a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background-color: #80aac8;
+}
+
+/* Основний стиль для модального вікна */
+.modal {
+  display: none; /* Спочатку приховано */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
+}
+
+/* Стилі контенту модального вікна */
+.modal__content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  background-color: #5a806a;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка для закриття модального вікна */
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.filter-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #5a806a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-button:hover {
+  background-color: #80aac8;
+}
+.filter {
+  margin-bottom: 15px;
+}
